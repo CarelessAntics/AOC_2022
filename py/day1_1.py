@@ -1,5 +1,5 @@
 def main():
-    with open('../../inputs/day1/input_1.txt') as f:
+    with open('../inputs/day1/input_1.txt') as f:
         data = f.read().split('\n\n')
 
     elves = [[int(y) for y in x.split('\n')] for x in data]

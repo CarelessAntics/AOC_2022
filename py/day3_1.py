@@ -2,7 +2,7 @@ import string
 
 def main():
 
-    with open("../../inputs/day3/input1.txt") as f:
+    with open("../inputs/day3/input1.txt") as f:
 
         raw_data = f.read().split('\n')
         # Break down the string into halves and then: [[string, string], [string, string], ...]

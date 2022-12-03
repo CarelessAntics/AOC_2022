@@ -1,6 +1,6 @@
 def main():
     
-    with open("../../inputs/day2/input1.txt") as f:
+    with open("../inputs/day2/input1.txt") as f:
         data = [tuple(row.split(' ')) for row in f.read().split('\n')]
 
     P1_total_score = 0
