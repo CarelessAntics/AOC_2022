@@ -1,5 +1,3 @@
-
-
 def main():
 
     with open("../inputs/day4/input1.txt") as f:
@@ -16,13 +14,13 @@ def main():
         
     print(f"P1 answer: {P1_answer}")
     print(f"P2 answer: {P2_answer}")
-    
+
 
 def is_encased(range_1, range_2):
     return range_1[0] >= range_2[0] and range_1[1] <= range_2[1]
 
 def is_overlapping(range_1, range_2):
-    return (range_1[0] >= range_2[0] and range_1[0] <= range_2[1]) or (range_1[1] >= range_2[0] and range_1[1] <= range_2[1])
+    return range_1[0] >= range_2[0] and range_1[0] <= range_2[1]
 
 if __name__ == '__main__':
     main()
