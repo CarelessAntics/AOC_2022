@@ -1,4 +1,3 @@
-from itertools import takewhile
 from functools import reduce
 
 
@@ -18,14 +17,14 @@ def main():
     print(f"P2 answer: {P2_answer}")
 
 
-
+# Check if a tree is visible from any direction
 def P1_check_visibility(grid):
+
 
     perimeter = len(grid) * 2 + (len(grid[0]) - 2) * 2
     directions = ['N', 'E', 'S', 'W']
     dimensions = (len(grid[0]), len(grid))
     count = perimeter
-    #print(perimeter)
 
     for y, row in enumerate(grid):
         if y == 0 or y == len(grid)-1:
@@ -35,9 +34,8 @@ def P1_check_visibility(grid):
             if x == 0 or x == len(grid)-1:
                 continue
 
-            #print(f"({x},{y}) {tree}", end=' ')
-            
             visible = False
+            # Check each direction. If any return true, increment count and break loop
             for direction in directions:
                 if direction == 'N':
                     visible = not tuple(i[x] for i in grid[:y] if i[x] >= tree)
@@ -49,13 +47,13 @@ def P1_check_visibility(grid):
                     visible = not tuple(i for i in row[:x] if i >= tree)
 
                 if visible:
-                    #print(direction) 
                     count += 1
                     break
             
     return count
 
 
+# Check how far can be seen from a given tree
 def P2_check_scenery(grid):
 
     directions = ['N', 'E', 'S', 'W']
@@ -69,6 +67,7 @@ def P2_check_scenery(grid):
             if x == 0 or x == len(grid)-1:
                 continue
             
+            # Begin counting from current tree, and break loop when a taller tree is found. Repeat for each direction
             view_distance = {d:0 for d in directions}
             for direction in directions:
                 if direction == 'N':
