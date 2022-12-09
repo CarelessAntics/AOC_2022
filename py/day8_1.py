@@ -56,6 +56,7 @@ def P1_check_visibility(grid):
 # Check how far can be seen from a given tree
 def P2_check_scenery(grid):
 
+
     directions = ['N', 'E', 'S', 'W']
     scenery_values = []
 
