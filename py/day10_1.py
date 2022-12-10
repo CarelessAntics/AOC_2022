@@ -4,7 +4,6 @@ def main():
     with open("../inputs/day10/input1.txt") as f:
         signal = [x if len(x) == 1 else [int(y) if y.lstrip('-').isnumeric() else y for y in x.split(' ')] for x in f.read().split('\n')]
 
-
     P1_answer = 0
     P2_answer = 0
 
