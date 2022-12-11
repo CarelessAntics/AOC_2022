@@ -58,7 +58,7 @@ def P2_draw_CRT(signal):
     cycle = 0
     command_index = 0
     addx_counter = 0
-    rows = [['.'] * 40 for i in range(6)]
+    rows = [[' '] * 40 for i in range(6)]
     row_index = 0
     register = 1
 
@@ -76,7 +76,7 @@ def P2_draw_CRT(signal):
             break
 
         if px_index <= register + 1 and px_index >= register - 1:
-            current_row[px_index] = '#'
+            current_row[px_index] = '█'
 
         if current_command[0] == 'noop':
             command_index += 1
